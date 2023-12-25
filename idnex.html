@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quadratic Equation Solver</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Include DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <!-- Include DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+	<!-- Include Bootstrap to make it look supper 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
+
+	
+	<link rel="stylesheet" href="custom.css">
+	<style type="text/css">
+			.dataTables_wrapper .dataTables_length select,
+			.dataTables_wrapper .dataTables_filter input
+			{
+				background: #9bf49b;
+			}
+	</style>
+
+</head>
+</head>
+<body>
+  <h1>Quadratic Equation Solver</h1>
+  
+  <!-- Coefficients input -->
+  <label for="a">Enter coefficient a:</label>
+  <input type="number" id="a" placeholder="Enter a">
+  
+  <label for="b">Enter coefficient b:</label>
+  <input type="number" id="b" placeholder="Enter b">
+  
+  <label for="c">Enter coefficient c:</label>
+  <input type="number" id="c" placeholder="Enter c">
+  
+  <!-- Button to solve -->
+  <button onclick="solveQuadraticEquation()">Solve</button>
+
+  <!-- Results display -->
+  <div id="results"></div>
+
+  <!-- Script to include the quadratic equation solver function -->
+  <script>
+    function solveQuadratic(a, b, c) {
+      const discriminant = b * b - 4 * a * c;
+
+      if (discriminant > 0) {
+        const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        return [root1, root2];
+      } else if (discriminant === 0) {
+        const root = -b / (2 * a);
+        return [root];
+      } else {
+        const realPart = -b / (2 * a);
+        const imaginaryPart = Math.sqrt(Math.abs(discriminant)) / (2 * a);
+        return [`${realPart} + ${imaginaryPart}i`, `${realPart} - ${imaginaryPart}i`];
+      }
+    }
+
+    function solveQuadraticEquation() {
+      // Get coefficients from user input
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+      const c = parseFloat(document.getElementById('c').value);
+
+      // Call the solver function
+      const roots = solveQuadratic(a, b, c);
+
+      // Display the results
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = 'Roots: ' + (roots ? roots.join(', ') : 'No real roots');
+    }
+  </script>
+</body>
+</html>
