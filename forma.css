@@ -1,0 +1,19 @@
+.fonp{ 
+    background: linear-gradient(-90deg, #C2C2C2, #C2C2C2); 
+    } 
+.whtfon{ 
+    background: antiquewhite; 
+}
+.sprban{ 
+    position: absolute; 
+    transform: rotate(-90deg); 
+    top: 50%; 
+    bottom: 50%; 
+} 
+.shr { 
+    font-family: 'Crewniverse', sans-serif; 
+    font-optical-sizing: auto; 
+    font-weight: 700; 
+    font-style: normal; 
+    font-size: 50px; 
+} 

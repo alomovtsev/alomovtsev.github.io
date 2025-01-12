@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <style>
+
+
+@import "bourbon";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+body { 
+  font-family: 'Open Sans', sans-serif; 
+  margin-top: 50px;
+}
+
+section {
+  width: 610px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  $border-color: rgba(orange, 1);
+  width: 300px;
+  min-height: 250px;
+  position: relative;
+  border: 2px solid $border-color;
+  border-left: 40px solid $border-color;
+  padding: 15px;
+  color: rgba(black, 0.5);
+  font-size: small;
+  display: inline-block;
+  
+  h3 {
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: -30px;
+    
+    @include transform(rotate(270deg));
+    @include transform-origin(0 0);
+  }
+  
+}
+
+View Compiled
+
+
+          </style>      
+    </head>
+<body>
+<div style="border: 2px solid blue; padding: 3px; width: 400px;">
+    <table border="1" style="border-collapse: collapse; width: 100%;">
+        <tr>
+            <td colspan="3" style="height: 40px; border: 2px solid lightBlue; text-align: center;">Шапка сайта</td>
+        </tr>
+        <tr>
+            <td>MENU</td>
+            <td colspan="2">CONTENT</td>
+        </tr>
+        <tr>
+            <td colspan="3">footer</td>
+        </tr>
+    </table>
+</div>
+
+<hr/>
+
+
+
+<section>
+    <div class="wrapper">
+      <h3>Header One</h3>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat aliquam deserunt harum rem earum assumenda perspiciatis expedita. Aliquid distinctio tenetur fugiat qui recusandae obcaecati voluptates.</p>
+      </div>
+    </div>
+    
+    <div class="wrapper">
+      <h3>Header Two</h3>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat aliquam deserunt harum rem earum assumenda perspiciatis expedita. Aliquid distinctio tenetur fugiat qui recusandae obcaecati voluptates.</p>
+      </div>
+    </div>
+  </section>
+  
+  
+
+
+
+</body>
+</html>
